@@ -8,7 +8,12 @@ import Blogs from "./components/Blogs/Blogs";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import Inventory from "./components/Inventory/Inventory";
+import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
+import Register from "./components/Register/Register";
+import RequireAuth from "./components/RequireAuth/RequireAuth";
+import ResetPassword from "./components/ResetPassword/ResetPassword";
 
 function App() {
   useEffect(() => {
@@ -20,7 +25,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route
+          path="/inventory/:id"
+          element={
+            <RequireAuth>
+              <Inventory />
+            </RequireAuth>
+          }
+        />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/resetpassword" element={<ResetPassword />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
