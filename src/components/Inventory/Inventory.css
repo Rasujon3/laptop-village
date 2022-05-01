@@ -1,0 +1,16 @@
+/* smartphone */
+@media only screen and (max-width: 767px) {
+  .inventory {
+    width: 100%;
+  }
+} /* tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .inventory {
+    width: 75%;
+  }
+} /* desktop */
+@media screen and (min-width: 1024px) {
+  .inventory {
+    width: 50%;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "./../PageTitle/PageTitle";
 import Loading from "./../Loading/Loading";
@@ -7,8 +7,6 @@ import auth from "../../firebase.init";
 import axios from "axios";
 
 const Login = () => {
-  const emailRef = useRef("");
-  const passwordRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
   let errorElement;
@@ -23,7 +21,7 @@ const Login = () => {
   }
 
   if (user) {
-    // navigate(from, { replace: true });
+    navigate(from, { replace: true });
   }
 
   if (error) {
@@ -35,10 +33,10 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/login", { email });
-    localStorage.setItem("accessToken", data.accessToken);
-    event.target.reset();
-    navigate(from, { replace: true });
+    // const { data } = await axios.post("http://localhost:5000/login", { email });
+    // localStorage.setItem("accessToken", data.accessToken);
+    // event.target.reset();
+    // navigate(from, { replace: true });
   };
   return (
     <div className="container">
