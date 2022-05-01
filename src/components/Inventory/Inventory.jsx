@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Inventory.css";
 
@@ -8,6 +8,7 @@ const Inventory = () => {
   const [product, setProduct] = useState({});
   const { _id, name, price, description, img, quantity, supplierName } =
     product;
+  const navigate = useNavigate();
   useEffect(() => {
     const url = `http://localhost:5000/product/${id}`;
     fetch(url)
@@ -29,6 +30,9 @@ const Inventory = () => {
       .then((result) => {
         console.log(result);
         toast("Updated quantity successfully");
+        setTimeout(() => {
+          navigate("/home");
+        }, 2000);
       });
   };
 
