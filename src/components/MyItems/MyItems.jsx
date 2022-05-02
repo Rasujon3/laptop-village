@@ -36,10 +36,11 @@ const MyItems = () => {
     <div className="container-width container mx-auto">
       <h2 className="text-center">My Items</h2>
 
-      <table className="table table-striped table-hover">
+      <table className="table table-striped table-hover caption-top table-responsive">
+        <caption>List of {user?.email}'s product</caption>
         <thead>
           <tr>
-            {/* <th scope="col">No</th> */}
+            <th scope="col">Image</th>
             <th scope="col">Product Name</th>
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
@@ -48,7 +49,13 @@ const MyItems = () => {
         {myItems.map((myItem) => (
           <tbody key={myItem._id}>
             <tr>
-              {/* <th scope="row">0</th> */}
+              <th scope="row">
+                <img
+                  style={{ height: "30px", width: "50px" }}
+                  src={myItem.img}
+                  alt={myItem.name}
+                />
+              </th>
               <td>{myItem.name}</td>
               <td>$ {myItem.price}</td>
               <td>{myItem.quantity}</td>
