@@ -2,7 +2,7 @@ import axios from "axios";
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
@@ -32,18 +32,38 @@ const MyItems = () => {
     };
     getOrders();
   }, [user]);
+
+  const handleDeleteProduct = (id) => {
+    const proceed = window.confirm("Are you sure to delete this product?");
+    if (proceed) {
+      const url = `http://localhost:5000/product/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
+          const remaining = myItems.filter((myItem) => myItem._id !== id);
+          setMyItems(remaining);
+          toast("Deleted Successfully");
+        });
+    }
+  };
   return (
     <div className="container-width container mx-auto">
       <h2 className="text-center">My Items</h2>
 
       <table className="table table-striped table-hover caption-top table-responsive">
-        <caption>List of {user?.email}'s product</caption>
+        <caption className="text-center">
+          List of {user?.email}'s product
+        </caption>
         <thead>
           <tr>
             <th scope="col">Image</th>
             <th scope="col">Product Name</th>
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         {myItems.map((myItem) => (
@@ -59,6 +79,17 @@ const MyItems = () => {
               <td>{myItem.name}</td>
               <td>$ {myItem.price}</td>
               <td>{myItem.quantity}</td>
+              <td>
+                {/* <p className="pe-auto"> */}
+                <Link
+                  to=""
+                  onClick={() => handleDeleteProduct(myItem._id)}
+                  className="pe-auto text-decoration-none"
+                >
+                  ❌
+                </Link>
+                {/* </p> */}
+              </td>
             </tr>
           </tbody>
         ))}
