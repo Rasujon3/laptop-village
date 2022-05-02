@@ -35,8 +35,12 @@ const Header = () => {
                 </CustomLink>
               </li>
               <li className="nav-item">
-                <CustomLink className="nav-link" aria-current="page" to="/">
-                  Manage Items
+                <CustomLink
+                  className="nav-link"
+                  aria-current="page"
+                  to="/manageinventory"
+                >
+                  Manage Inventories
                 </CustomLink>
               </li>
               <li className="nav-item">
