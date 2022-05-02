@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import {
   useCreateUserWithEmailAndPassword,
@@ -7,6 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import PageTitle from "../PageTitle/PageTitle";
+import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Register.css";
 
 const Register = () => {
@@ -37,6 +39,12 @@ const Register = () => {
     if (agree) {
       await createUserWithEmailAndPassword(email, password);
       await updateProfile({ name });
+      const { data } = await axios.post("http://localhost:5000/login", {
+        email,
+      });
+      localStorage.setItem("accessToken", data.accessToken);
+      event.target.reset();
+      // navigate(from, { replace: true });
       navigate(from, { replace: true });
     }
   };
@@ -3993,7 +4001,7 @@ const Register = () => {
                 Please Login
               </Link>{" "}
             </p>
-            {/* <SocialLogin /> */}
+            <SocialLogin />
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import axios from "axios";
 import { toast } from "react-toastify";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -644,7 +645,7 @@ const Login = () => {
         <div className="col-md-6 col-12 ">
           <div className="">
             <PageTitle title="Login" />
-            <h2 className="text-primary text-center mt-2">Sign In</h2>
+            <h2 className="text-center mt-2">Sign In</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <input
@@ -694,7 +695,7 @@ const Login = () => {
               </Link>{" "}
             </p>
 
-            {/* <SocialLogin /> */}
+            <SocialLogin />
           </div>
         </div>
       </div>

@@ -1,0 +1,16 @@
+/* smartphone */
+@media screen and (max-width: 767px) {
+  .container-width {
+    width: 100%;
+  }
+} /* tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-width {
+    width: 75%;
+  }
+} /* desktop */
+@media screen and (min-width: 1024px) {
+  .container-width {
+    width: 50%;
+  }
+}
