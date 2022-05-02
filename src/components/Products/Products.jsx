@@ -13,9 +13,10 @@ const Products = () => {
     <div className="container">
       <div className="row">
         <h2 className="text-center my-2">Products</h2>
-        {products.slice(0, 6).map((product) => (
-          <Product key={product._id} product={product} />
-        ))}
+        {products.length > 5 &&
+          products
+            .slice(0, 6)
+            .map((product) => <Product key={product._id} product={product} />)}
       </div>
     </div>
   );
