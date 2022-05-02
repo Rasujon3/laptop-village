@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import useProducts from "../../hooks/useProducts";
 import Product from "../Product/Product";
 
 const Products = () => {
   const [products, setProducts] = useProducts();
+  const handleDeleteProduct = (id) => {
+    const proceed = window.confirm("Are you sure to delete this product?");
+    if (proceed) {
+      const url = `http://localhost:5000/product/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
+          const remaining = products.filter((product) => product._id !== id);
+          setProducts(remaining);
+          toast("Deleted Successfully");
+        });
+    }
+  };
   return (
     <div className="container">
       <div className="row">
@@ -14,7 +31,11 @@ const Products = () => {
               .slice(0, 6)
               .map((product) => <Product key={product._id} product={product} />)
           : products.map((product) => (
-              <Product key={product._id} product={product} />
+              <Product
+                key={product._id}
+                product={product}
+                handleDeleteProduct={handleDeleteProduct}
+              />
             ))}
       </div>
       <Link to="/manageinventory">

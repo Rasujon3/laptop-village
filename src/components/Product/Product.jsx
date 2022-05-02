@@ -3,31 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import { toast } from "react-toastify";
 
-const Product = ({ product }) => {
-  const [products, setProducts] = useProducts();
+const Product = ({ product, handleDeleteProduct }) => {
   const { _id, name, price, description, img, quantity, supplierName } =
     product;
-  const navigate = useNavigate();
 
-  const handleDeleteProduct = (id) => {
-    const proceed = window.confirm("Are you sure to delete this product?");
-    if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          console.log(result);
-          const remaining = products.filter((product) => product._id !== id);
-          setProducts(remaining);
-          toast("Deleted Successfully");
-          setTimeout(() => {
-            navigate("/");
-          }, 2000);
-        });
-    }
-  };
   return (
     <>
       <div className="g-2 col-sm-12 col-md-6 col-lg-4">
