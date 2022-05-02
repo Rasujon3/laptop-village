@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import PageTitle from "../PageTitle/PageTitle";
 
 const MyItems = () => {
   const [user] = useAuthState(auth);
@@ -51,6 +52,7 @@ const MyItems = () => {
   };
   return (
     <div className="container-width container mx-auto">
+      <PageTitle title="My Items" />
       <h2 className="text-center">My Items</h2>
 
       <table className="table table-striped table-hover caption-top table-responsive">

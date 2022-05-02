@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import useProducts from "../../hooks/useProducts";
+import PageTitle from "../PageTitle/PageTitle";
 import Product from "../Product/Product";
 
 const ManageInventory = () => {
@@ -24,6 +25,7 @@ const ManageInventory = () => {
   };
   return (
     <div className="container">
+      <PageTitle title="Manage Inventory" />
       <div className="row">
         <h2 className="text-center my-2">Products</h2>
         {products.map((product) => (

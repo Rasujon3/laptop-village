@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import PageTitle from "../PageTitle/PageTitle";
 import "./AddInventoryItem.css";
 
 const AddInventoryItem = () => {
@@ -31,6 +32,7 @@ const AddInventoryItem = () => {
   };
   return (
     <div className="addInventory container mx-auto">
+      <PageTitle title="Add Inventory" />
       <h2 className="text-center">Add a Product</h2>
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input

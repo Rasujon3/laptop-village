@@ -1,4 +1,5 @@
 import React from "react";
+import PageTitle from "../PageTitle/PageTitle";
 
 const Blogs = () => {
   return (
@@ -8,6 +9,7 @@ const Blogs = () => {
       data-aos-duration="1500"
       className="container mt-2"
     >
+      <PageTitle title="Blogs" />
       <div className="accordion" id="accordionExample">
         <div className="accordion-item mb-2">
           <h2 className="accordion-header" id="headingOne">
@@ -29,13 +31,17 @@ const Blogs = () => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <figure className="table">
+              <figure className="table table-striped table-hover table-responsive">
                 <table>
                   <thead>
                     <tr>
-                      <th>S.No</th>
-                      <th>Javascript</th>
-                      <th>NodeJS</th>
+                      <th scope="col">No</th>
+                      <th className="text-center" scope="col">
+                        Javascript
+                      </th>
+                      <th className="text-center" scope="col">
+                        NodeJS
+                      </th>
                     </tr>
                   </thead>
                   <tbody>

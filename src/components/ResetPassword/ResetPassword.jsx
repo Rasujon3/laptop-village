@@ -3,6 +3,7 @@ import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
+import PageTitle from "../PageTitle/PageTitle";
 
 const ResetPassword = () => {
   const emailRef = useRef("");
@@ -31,6 +32,7 @@ const ResetPassword = () => {
   }
   return (
     <div className="container">
+      <PageTitle title="Reset Password" />
       <div className="d-flex align-items-center my-2 row">
         <div className="col-md-6 col-12">
           <div>

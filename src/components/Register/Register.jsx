@@ -35,6 +35,7 @@ const Register = () => {
       </p>
     );
     toast(error?.message);
+    return;
   }
 
   if (user) {
