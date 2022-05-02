@@ -4,7 +4,7 @@ const About = () => {
   return (
     // <!-- ======= About Section ======= -->
     <>
-      <h2 className="text-center my-2">About</h2>
+      <h2 className="text-center my-5">About</h2>
       <section className="about" data-aos="fade-up">
         <div className="container">
           <div className="row">

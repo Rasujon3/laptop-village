@@ -25,7 +25,7 @@ const Products = () => {
   return (
     <div className="container">
       <div className="row">
-        <h2 className="text-center my-2">Products</h2>
+        <h2 className="text-center my-5">Products</h2>
         {products.length > 5
           ? products
               .slice(0, 6)

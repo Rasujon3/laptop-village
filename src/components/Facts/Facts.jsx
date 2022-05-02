@@ -6,7 +6,7 @@ const Facts = () => {
   return (
     <>
       {/* //  ======= Facts Section =======  */}
-      <section className="facts section-bg my-2" data-aos="fade-up">
+      <section className="facts section-bg my-5 py-5" data-aos="fade-up">
         <div className="container">
           <div className="row counters">
             <div className="col-lg-3 col-6 text-center">
