@@ -3983,7 +3983,7 @@ const Register = () => {
                 className={`ps-2 ${agree ? "" : "text-danger"}`}
                 htmlFor="terms"
               >
-                Accept Genius Car Terms & Conditions
+                Accept Sujon Ware House Terms & Conditions
               </label>
               <input
                 disabled={!agree}

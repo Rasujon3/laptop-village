@@ -6,9 +6,9 @@ import "./Inventory.css";
 const Inventory = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  // const [singleProductQuantity, setSingleProductQuantity] = useState("");
   const { _id, name, price, description, img, quantity, supplierName } =
     product;
+  const [singleProductQuantity, setSingleProductQuantity] = useState(quantity);
   const navigate = useNavigate();
   useEffect(() => {
     const url = `http://localhost:5000/product/${id}`;
@@ -16,12 +16,13 @@ const Inventory = () => {
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
-        // setSingleProductQuantity(quantity);
+        setSingleProductQuantity(parseFloat(quantity));
       });
   }, [id, quantity]);
 
   const handleDeliveredBtn = () => {
-    const updateQuantity = (parseInt(product.quantity) - 1).toString();
+    // const updateQuantity = (parseFloat(quantity) - 1).toString();
+    const updateQuantity = (parseFloat(singleProductQuantity) - 1).toString();
     const url = `http://localhost:5000/product/${id}`;
     fetch(url, {
       method: "PUT",
@@ -32,12 +33,12 @@ const Inventory = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        // setSingleProductQuantity(updateQuantity);
-        console.log(result);
+        setSingleProductQuantity(parseFloat(updateQuantity));
+        // console.log(result);
         toast("Quantity updated successfully");
-        setTimeout(() => {
-          navigate("/home");
-        }, 2000);
+        // setTimeout(() => {
+        //   navigate(`/inventory/${_id}`);
+        // }, 2000);
       });
   };
 
@@ -45,7 +46,8 @@ const Inventory = () => {
     event.preventDefault();
     const inputQuantity = event.target.quantity.value;
     const quantity = parseFloat(inputQuantity);
-    const previousQuantity = parseFloat(product.quantity);
+    // const previousQuantity = parseFloat(product.quantity);
+    const previousQuantity = parseFloat(singleProductQuantity);
     if (quantity < 0) {
       toast("Please Enter a Positive Number");
       return;
@@ -62,12 +64,13 @@ const Inventory = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        // setSingleProductQuantity(updateQuantity);
-        console.log(result);
+        setSingleProductQuantity(parseFloat(updateQuantity));
+        // console.log(result);
+        event.target.reset();
         toast("Quantity updated successfully");
-        setTimeout(() => {
-          navigate("/home");
-        }, 2000);
+        // setTimeout(() => {
+        //   navigate("/home");
+        // }, 2000);
       });
   };
 
@@ -80,11 +83,16 @@ const Inventory = () => {
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{description}</p>
             <p>Supplier Name: {supplierName}</p>
-            <h4>Price: {price} $</h4>
+            <h4>Price: $ {price}</h4>
             <p>
-              <small>Quantity: {quantity}</small>
+              {/* <small>Quantity: {quantity}</small> */}
+              <small>Quantity: {singleProductQuantity}</small>
             </p>
-            <button onClick={handleDeliveredBtn} className="btn btn-primary">
+            <button
+              disabled={parseFloat(singleProductQuantity) === 0}
+              onClick={handleDeliveredBtn}
+              className="btn btn-primary"
+            >
               Delivered
             </button>
             {/* Button trigger modal  */}

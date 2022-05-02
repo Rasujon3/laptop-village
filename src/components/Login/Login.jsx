@@ -29,6 +29,8 @@ const Login = () => {
 
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
+    toast(error?.message);
+    return;
   }
 
   const handleSubmit = async (event) => {
