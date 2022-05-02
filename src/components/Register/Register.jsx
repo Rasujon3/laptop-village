@@ -10,6 +10,7 @@ import Loading from "../Loading/Loading";
 import PageTitle from "../PageTitle/PageTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Register.css";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [agree, setAgree] = useState(false);
@@ -20,9 +21,20 @@ const Register = () => {
   const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
+  let errorElement;
 
   if (loading || updating) {
     return <Loading />;
+  }
+
+  if (error || updateError) {
+    errorElement = (
+      <p className="text-danger text-center">
+        {/* Error: {error?.message} {githubError?.message} */}
+        Error: {error?.message}
+      </p>
+    );
+    toast(error?.message);
   }
 
   if (user) {
@@ -3992,6 +4004,7 @@ const Register = () => {
                 value="Register"
               />
             </form>
+            {errorElement}
             <p>
               Already have an account?{" "}
               <Link

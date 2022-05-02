@@ -11,7 +11,7 @@ const MyItems = () => {
   const [myItems, setMyItems] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    const getOrders = async () => {
+    const getMyItems = async () => {
       const email = user?.email;
       const url = `http://localhost:5000/myproduct?email=${email}`;
       try {
@@ -30,7 +30,7 @@ const MyItems = () => {
         }
       }
     };
-    getOrders();
+    getMyItems();
   }, [user]);
 
   const handleDeleteProduct = (id) => {
@@ -42,7 +42,7 @@ const MyItems = () => {
       })
         .then((res) => res.json())
         .then((result) => {
-          console.log(result);
+          // console.log(result);
           const remaining = myItems.filter((myItem) => myItem._id !== id);
           setMyItems(remaining);
           toast("Deleted Successfully");
