@@ -13,6 +13,11 @@ const ManageInventory = () => {
           <Product key={product._id} product={product} />
         ))}
       </div>
+      <Link to="/addinventoryitem">
+        <button className="btn btn-primary w-25 mx-auto d-block my-3">
+          Add New Product
+        </button>
+      </Link>
     </div>
   );
 };

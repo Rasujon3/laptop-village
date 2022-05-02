@@ -5,13 +5,6 @@ import Product from "../Product/Product";
 
 const Products = () => {
   const [products, setProducts] = useProducts();
-
-  // useEffect(() => {
-  //   const url = `http://localhost:5000/products`;
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data));
-  // }, []);
   return (
     <div className="container">
       <div className="row">
