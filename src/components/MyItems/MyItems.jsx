@@ -34,7 +34,7 @@ const MyItems = () => {
   }, [user]);
   return (
     <div className="w-50 mx-auto">
-      <h2 className="text-primary text-center">My Items</h2>
+      <h2 className="text-center">My Items</h2>
 
       <table className="table">
         <thead>

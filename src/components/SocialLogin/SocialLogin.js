@@ -10,6 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import "./SocialLogin.css";
+import axios from "axios";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -27,9 +28,20 @@ const SocialLogin = () => {
 
   useEffect(() => {
     // if (user || githubUser || facebookUser || twitterUser) {
-    if (user) {
-      navigate(from, { replace: true });
-    }
+    const handleJWTtoken = async () => {
+      if (user) {
+        const email = user?.user?.email;
+        console.log(email);
+        const { data } = await axios.post("http://localhost:5000/login", {
+          email,
+        });
+        localStorage.setItem("accessToken", data.accessToken);
+        // event.target.reset();
+        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
+      }
+    };
+    handleJWTtoken();
     // }, [user, githubUser, facebookUser, twitterUser]);
   }, [user]);
 
