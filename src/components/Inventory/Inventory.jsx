@@ -6,6 +6,7 @@ import "./Inventory.css";
 const Inventory = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  // const [singleProductQuantity, setSingleProductQuantity] = useState("");
   const { _id, name, price, description, img, quantity, supplierName } =
     product;
   const navigate = useNavigate();
@@ -13,8 +14,11 @@ const Inventory = () => {
     const url = `http://localhost:5000/product/${id}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, [id]);
+      .then((data) => {
+        setProduct(data);
+        // setSingleProductQuantity(quantity);
+      });
+  }, [id, quantity]);
 
   const handleDeliveredBtn = () => {
     const updateQuantity = (parseInt(product.quantity) - 1).toString();
@@ -28,6 +32,7 @@ const Inventory = () => {
     })
       .then((res) => res.json())
       .then((result) => {
+        // setSingleProductQuantity(updateQuantity);
         console.log(result);
         toast("Quantity updated successfully");
         setTimeout(() => {
@@ -57,6 +62,7 @@ const Inventory = () => {
     })
       .then((res) => res.json())
       .then((result) => {
+        // setSingleProductQuantity(updateQuantity);
         console.log(result);
         toast("Quantity updated successfully");
         setTimeout(() => {
