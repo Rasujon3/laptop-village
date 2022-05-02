@@ -33,23 +33,25 @@ const MyItems = () => {
     getOrders();
   }, [user]);
   return (
-    <div className="w-50 mx-auto">
+    <div className="container-width container mx-auto">
       <h2 className="text-center">My Items</h2>
 
-      <table className="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            {/* <th scope="col">No</th> */}
             <th scope="col">Product Name</th>
             <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
           </tr>
         </thead>
         {myItems.map((myItem) => (
           <tbody key={myItem._id}>
             <tr>
-              <th scope="row">0</th>
+              {/* <th scope="row">0</th> */}
               <td>{myItem.name}</td>
-              <td>{myItem.price}</td>
+              <td>$ {myItem.price}</td>
+              <td>{myItem.quantity}</td>
             </tr>
           </tbody>
         ))}
