@@ -5,6 +5,7 @@ import Loading from "./../Loading/Loading";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,7 +22,8 @@ const Login = () => {
   }
 
   if (user) {
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
+    toast("Sign In Successfully");
   }
 
   if (error) {
@@ -33,10 +35,10 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     await signInWithEmailAndPassword(email, password);
-    // const { data } = await axios.post("http://localhost:5000/login", { email });
-    // localStorage.setItem("accessToken", data.accessToken);
-    // event.target.reset();
-    // navigate(from, { replace: true });
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    localStorage.setItem("accessToken", data.accessToken);
+    event.target.reset();
+    navigate(from, { replace: true });
   };
   return (
     <div className="container">

@@ -30,7 +30,11 @@ const Header = () => {
               {user && (
                 <>
                   <li className="nav-item">
-                    <CustomLink className="nav-link" aria-current="page" to="/">
+                    <CustomLink
+                      className="nav-link"
+                      aria-current="page"
+                      to="/myitems"
+                    >
                       My items
                     </CustomLink>
                   </li>
