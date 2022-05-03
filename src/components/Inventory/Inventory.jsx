@@ -76,17 +76,17 @@ const Inventory = () => {
 
   return (
     <>
-      <div className="inventory container mx-auto">
-        <div className="card">
+      <div className="inventory container mx-auto my-5">
+        {/* <div className="card">
           <img src={img} className="card-img-top" alt={name} />
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{description}</p>
             <p>Supplier Name: {supplierName}</p>
             <h4>Price: $ {price}</h4>
-            <p>
-              {/* <small>Quantity: {quantity}</small> */}
-              <small>Quantity: {singleProductQuantity}</small>
+            <p> */}
+        {/* <small>Quantity: {quantity}</small> */}
+        {/* <small>Quantity: {singleProductQuantity}</small>
             </p>
             <button
               disabled={parseFloat(singleProductQuantity) === 0}
@@ -94,9 +94,9 @@ const Inventory = () => {
               className="btn btn-primary"
             >
               Delivered
-            </button>
-            {/* Button trigger modal  */}
-            <button
+            </button> */}
+        {/* Button trigger modal  */}
+        {/* <button
               type="button"
               className="btn btn-primary ms-2"
               data-bs-toggle="modal"
@@ -104,6 +104,44 @@ const Inventory = () => {
             >
               Update Product
             </button>
+          </div>
+        </div> */}
+        <div className="card mb-3">
+          <div className="row g-0">
+            <div className="col-md-4">
+              <img
+                style={{ height: "100%" }}
+                src={img}
+                className="img-fluid rounded-start"
+                alt={name}
+              />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title">{name}</h5>
+                <p className="card-text">{description}</p>
+                <p>Supplier Name: {supplierName}</p>
+                <h4>Price: $ {price}</h4>
+                <p>
+                  <small>Quantity: {singleProductQuantity}</small>
+                </p>
+                <button
+                  disabled={parseFloat(singleProductQuantity) === 0}
+                  onClick={handleDeliveredBtn}
+                  className="btn btn-primary"
+                >
+                  Delivered
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-primary ms-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  Update Product
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
