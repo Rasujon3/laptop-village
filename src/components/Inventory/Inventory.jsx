@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Inventory.css";
+import Loading from "./../Loading/Loading";
 
 const Inventory = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  const { _id, name, price, description, img, quantity, supplierName } =
-    product;
+  let { _id, name, price, description, img, quantity, supplierName } = product;
+  if (isNaN(quantity)) quantity = 0;
+
   const [singleProductQuantity, setSingleProductQuantity] = useState(quantity);
+
   const navigate = useNavigate();
   useEffect(() => {
     const url = `https://assignmenteleven.herokuapp.com/product/${id}`;
@@ -125,13 +128,18 @@ const Inventory = () => {
                 <p>
                   <small>Quantity: {singleProductQuantity}</small>
                 </p>
-                <button
-                  disabled={parseFloat(singleProductQuantity) === 0}
-                  onClick={handleDeliveredBtn}
-                  className="btn btn-primary"
-                >
-                  Delivered
-                </button>
+                {parseFloat(singleProductQuantity) === 0 ? (
+                  <button disabled className="btn btn-danger">
+                    Sold
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleDeliveredBtn}
+                    className="btn btn-primary"
+                  >
+                    Delivered
+                  </button>
+                )}
                 <button
                   type="button"
                   className="btn btn-primary ms-2"

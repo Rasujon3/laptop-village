@@ -85,7 +85,7 @@ const AddInventoryItem = () => {
           type="text"
           {...register("supplierName", { required: true })}
         />
-        <input type="submit" value="Add Product" />
+        <input className="btn btn-primary" type="submit" value="Add Product" />
       </form>
     </div>
   );
