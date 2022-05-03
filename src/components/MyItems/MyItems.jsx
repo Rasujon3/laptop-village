@@ -14,7 +14,7 @@ const MyItems = () => {
   useEffect(() => {
     const getMyItems = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/myproduct?email=${email}`;
+      const url = `https://assignmenteleven.herokuapp.com/myproduct?email=${email}`;
       try {
         const { data } = await axios.get(url, {
           headers: {
@@ -37,7 +37,7 @@ const MyItems = () => {
   const handleDeleteProduct = (id) => {
     const proceed = window.confirm("Are you sure to delete this product?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://assignmenteleven.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -55,7 +55,7 @@ const MyItems = () => {
       <PageTitle title="My Items" />
       <h2 className="text-center">My Items</h2>
       <hr
-        class="mb-4 mt-0 d-block mx-auto text-center"
+        className="mb-4 mt-0 d-block mx-auto text-center"
         style={{
           width: "60px",
           backgroundColor: "#00dafc",

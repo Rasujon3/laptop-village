@@ -32,9 +32,12 @@ const SocialLogin = () => {
       if (user) {
         const email = user?.user?.email;
         console.log(email);
-        const { data } = await axios.post("http://localhost:5000/login", {
-          email,
-        });
+        const { data } = await axios.post(
+          "https://assignmenteleven.herokuapp.com/login",
+          {
+            email,
+          }
+        );
         localStorage.setItem("accessToken", data.accessToken);
         // event.target.reset();
         // navigate(from, { replace: true });

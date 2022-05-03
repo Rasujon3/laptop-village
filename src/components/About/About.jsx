@@ -6,7 +6,7 @@ const About = () => {
     <>
       <h2 className="text-center mt-5">About</h2>
       <hr
-        class="mb-4 mt-0 d-block mx-auto text-center"
+        className="mb-4 mt-0 d-block mx-auto text-center"
         style={{
           width: "60px",
           backgroundColor: "#00dafc",

@@ -11,7 +11,7 @@ const Inventory = () => {
   const [singleProductQuantity, setSingleProductQuantity] = useState(quantity);
   const navigate = useNavigate();
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://assignmenteleven.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -23,7 +23,7 @@ const Inventory = () => {
   const handleDeliveredBtn = () => {
     // const updateQuantity = (parseFloat(quantity) - 1).toString();
     const updateQuantity = (parseFloat(singleProductQuantity) - 1).toString();
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://assignmenteleven.herokuapp.com/product/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -54,7 +54,7 @@ const Inventory = () => {
     }
 
     const updateQuantity = (previousQuantity + quantity).toString();
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://assignmenteleven.herokuapp.com/product/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

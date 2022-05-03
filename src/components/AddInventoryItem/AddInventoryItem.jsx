@@ -13,7 +13,7 @@ const AddInventoryItem = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     // console.log(data);
-    const url = `http://localhost:5000/product`;
+    const url = `https://assignmenteleven.herokuapp.com/product`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -35,7 +35,7 @@ const AddInventoryItem = () => {
       <PageTitle title="Add Inventory" />
       <h2 className="text-center">Add a Product</h2>
       <hr
-        class="mb-4 mt-0 d-block mx-auto text-center"
+        className="mb-4 mt-0 d-block mx-auto text-center"
         style={{
           width: "60px",
           backgroundColor: "#00dafc",

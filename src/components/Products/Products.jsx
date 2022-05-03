@@ -9,7 +9,7 @@ const Products = () => {
   const handleDeleteProduct = (id) => {
     const proceed = window.confirm("Are you sure to delete this product?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://assignmenteleven.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -26,7 +26,7 @@ const Products = () => {
     <>
       <h2 className="text-center mt-5">Products</h2>
       <hr
-        class="mb-4 mt-0 d-block mx-auto text-center"
+        className="mb-4 mt-0 d-block mx-auto text-center"
         style={{
           width: "60px",
           backgroundColor: "#00dafc",
