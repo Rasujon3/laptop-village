@@ -46,7 +46,7 @@ const AddInventoryItem = () => {
         <input
           className="mb-2"
           placeholder="Product Name"
-          {...register("name", { required: true, maxLength: 20 })}
+          {...register("name", { required: true })}
         />
         <input
           className="mb-2"

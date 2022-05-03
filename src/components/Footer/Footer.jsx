@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="container text-center text-md-start mt-5">
             <div className="row mt-3">
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto my-5">
-                <h6 className="text-uppercase fw-bold">Company name</h6>
+                <h6 className="text-uppercase fw-bold">Laptop Village</h6>
                 <hr
                   className="mb-4 mt-0 d-inline-block mx-auto"
                   style={{
@@ -21,9 +21,8 @@ const Footer = () => {
                   }}
                 />
                 <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
+                  Best place for buy your laptop. You can choose your laptop in
+                  thousand of collections.
                 </p>
               </div>
 
@@ -39,22 +38,22 @@ const Footer = () => {
                 />
                 <p>
                   <a href="#!" className="text-white text-decoration-none">
-                    MDBootstrap
+                    Laptop Sell
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-white text-decoration-none">
-                    MDWordPress
+                    Laptop Store
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-white text-decoration-none">
-                    BrandFlow
+                    Laptop Repair
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-white text-decoration-none">
-                    Bootstrap Angular
+                    Laptop Reseller
                   </a>
                 </p>
               </div>
@@ -76,7 +75,7 @@ const Footer = () => {
                 </p>
                 <p>
                   <a href="#!" className="text-white text-decoration-none">
-                    Become an Affiliate
+                    Become an Reseller
                   </a>
                 </p>
                 <p>
@@ -101,10 +100,10 @@ const Footer = () => {
                     height: "2px",
                   }}
                 />
-                <p>🏠 New York, NY 10012, US</p>
-                <p>💌 info@example.com</p>
-                <p>📞 + 01 234 567 88</p>
-                <p>☎ + 01 234 567 89</p>
+                <p>🏠 DB Road, Gaibandha</p>
+                <p>💌 lpvlg@gmail.com</p>
+                <p>📞 + 8801764401650</p>
+                <p>☎ + 55132222</p>
               </div>
             </div>
           </div>
@@ -117,10 +116,10 @@ const Footer = () => {
           © {new Date().getFullYear()} Copyright:
           <a
             className="text-white text-decoration-none"
-            href="https://mdbootstrap.com/"
+            href="https://ruhul-amin-sujon-portfolio.netlify.app/"
           >
             {" "}
-            Ruhul Amin Sujon
+            Laptop Village
           </a>
         </div>
       </footer>

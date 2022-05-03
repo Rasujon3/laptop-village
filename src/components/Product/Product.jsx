@@ -11,7 +11,12 @@ const Product = ({ product, handleDeleteProduct }) => {
     <>
       <div className="g-2 col-sm-12 col-md-6 col-lg-4">
         <div className="card">
-          <img src={img} className="card-img-top" alt={name} />
+          <img
+            src={img}
+            style={{ maxHeight: "250px" }}
+            className="card-img-top img-fluid"
+            alt={name}
+          />
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{description}</p>

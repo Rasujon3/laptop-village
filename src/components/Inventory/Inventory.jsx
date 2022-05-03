@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Inventory.css";
 import Loading from "./../Loading/Loading";
+import PageTitle from "../PageTitle/PageTitle";
 
 const Inventory = () => {
   const { id } = useParams();
@@ -80,6 +81,7 @@ const Inventory = () => {
   return (
     <>
       <div className="inventory container mx-auto my-5">
+        <PageTitle title="Inventory" />
         {/* <div className="card">
           <img src={img} className="card-img-top" alt={name} />
           <div className="card-body">

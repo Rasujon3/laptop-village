@@ -33,42 +33,33 @@ const Banner = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="https://genius-car-services-client.web.app/static/media/banner1.a56cf880f63ad1ddfb50.jpg"
+              style={{ maxHeight: "75vh" }}
+              src="https://aiymxkkouq.cloudimg.io/www.computervillage.com.bd/uploads/sliders/vlvFizjbf4OWcK0S0UzEZZg2DkdMAxiX1Jov7EwS.jpg?force_format=webp"
               className="d-block w-100"
               alt="..."
             />
-            <div className="carousel-caption d-none d-md-block">
+            {/* <div className="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
                 Some representative placeholder content for the first slide.
               </p>
-            </div>
+            </div> */}
           </div>
           <div className="carousel-item">
             <img
-              src="https://genius-car-services-client.web.app/static/media/banner2.21817224ae4e8c9fcca3.jpg"
+              style={{ maxHeight: "75vh" }}
+              src="https://aiymxkkouq.cloudimg.io/www.computervillage.com.bd/uploads/sliders/TRM4LnqjxLX39alrvkE8dZGkTX9Pua1MQQAjOlCL.jpg?force_format=webp"
               className="d-block w-100"
               alt="..."
             />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>
-                Some representative placeholder content for the second slide.
-              </p>
-            </div>
           </div>
           <div className="carousel-item">
             <img
-              src="https://genius-car-services-client.web.app/static/media/banner3.8b75e86de63bb19135c2.jpg"
+              style={{ maxHeight: "75vh" }}
+              src="https://www.startech.com.bd/image/cache/catalog/home/banner/eid-salami/eid-salami-live-home-banner-982x500.jpg"
               className="d-block w-100"
               alt="..."
             />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
-            </div>
           </div>
         </div>
         <button
