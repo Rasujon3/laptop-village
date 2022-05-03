@@ -4,7 +4,15 @@ const About = () => {
   return (
     // <!-- ======= About Section ======= -->
     <>
-      <h2 className="text-center my-5">About</h2>
+      <h2 className="text-center mt-5">About</h2>
+      <hr
+        class="mb-4 mt-0 d-block mx-auto text-center"
+        style={{
+          width: "60px",
+          backgroundColor: "#00dafc",
+          height: "2px",
+        }}
+      />
       <section className="about" data-aos="fade-up">
         <div className="container">
           <div className="row">

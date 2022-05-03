@@ -23,27 +23,39 @@ const Products = () => {
     }
   };
   return (
-    <div className="container">
-      <div className="row">
-        <h2 className="text-center my-5">Products</h2>
-        {products.length > 5
-          ? products
-              .slice(0, 6)
-              .map((product) => <Product key={product._id} product={product} />)
-          : products.map((product) => (
-              <Product
-                key={product._id}
-                product={product}
-                handleDeleteProduct={handleDeleteProduct}
-              />
-            ))}
+    <>
+      <h2 className="text-center mt-5">Products</h2>
+      <hr
+        class="mb-4 mt-0 d-block mx-auto text-center"
+        style={{
+          width: "60px",
+          backgroundColor: "#00dafc",
+          height: "2px",
+        }}
+      />
+      <div className="container">
+        <div className="row">
+          {products.length > 5
+            ? products
+                .slice(0, 6)
+                .map((product) => (
+                  <Product key={product._id} product={product} />
+                ))
+            : products.map((product) => (
+                <Product
+                  key={product._id}
+                  product={product}
+                  handleDeleteProduct={handleDeleteProduct}
+                />
+              ))}
+        </div>
+        <Link to="/manageinventory">
+          <button className="btn btn-primary mx-auto d-block my-3">
+            Manage Inventories
+          </button>
+        </Link>
       </div>
-      <Link to="/manageinventory">
-        <button className="btn btn-primary mx-auto d-block my-3">
-          Manage Inventories
-        </button>
-      </Link>
-    </div>
+    </>
   );
 };
 

@@ -1,8 +1,10 @@
 import React from "react";
 import "./Facts.css";
 import CountUp from "react-countup";
+import useProducts from "../../hooks/useProducts";
 
 const Facts = () => {
+  const [products] = useProducts();
   return (
     <>
       {/* //  ======= Facts Section =======  */}
@@ -28,7 +30,7 @@ const Facts = () => {
                 data-purecounter-duration="1"
                 className="purecounter"
               >
-                <CountUp delay={2} end={50} />
+                <CountUp delay={2} end={`${products.length}`} />
               </span>
               <p>Products</p>
             </div>

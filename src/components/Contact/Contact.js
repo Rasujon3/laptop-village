@@ -19,7 +19,15 @@ const Contact = () => {
       id="contact"
       className="container"
     >
-      <h2 className="text-center my-2">Contact</h2>
+      <h2 className="text-center mt-5">Contact</h2>
+      <hr
+        class="mb-4 mt-0 d-block mx-auto text-center"
+        style={{
+          width: "60px",
+          backgroundColor: "#00dafc",
+          height: "2px",
+        }}
+      />
       <div className="contact">
         <div className="contact-left">
           <img

@@ -34,6 +34,14 @@ const AddInventoryItem = () => {
     <div className="addInventory container mx-auto">
       <PageTitle title="Add Inventory" />
       <h2 className="text-center">Add a Product</h2>
+      <hr
+        class="mb-4 mt-0 d-block mx-auto text-center"
+        style={{
+          width: "60px",
+          backgroundColor: "#00dafc",
+          height: "2px",
+        }}
+      />
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="mb-2"

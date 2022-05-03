@@ -24,24 +24,34 @@ const ManageInventory = () => {
     }
   };
   return (
-    <div className="container">
-      <PageTitle title="Manage Inventory" />
-      <div className="row">
-        <h2 className="text-center my-2">Products</h2>
-        {products.map((product) => (
-          <Product
-            key={product._id}
-            product={product}
-            handleDeleteProduct={handleDeleteProduct}
-          />
-        ))}
+    <>
+      <h2 className="text-center my-2">Products</h2>
+      <hr
+        class="mb-4 mt-0 d-block mx-auto text-center"
+        style={{
+          width: "60px",
+          backgroundColor: "#00dafc",
+          height: "2px",
+        }}
+      />
+      <div className="container">
+        <PageTitle title="Manage Inventory" />
+        <div className="row">
+          {products.map((product) => (
+            <Product
+              key={product._id}
+              product={product}
+              handleDeleteProduct={handleDeleteProduct}
+            />
+          ))}
+        </div>
+        <Link to="/addinventoryitem">
+          <button className="btn btn-primary w-25 mx-auto d-block my-3">
+            Add New Product
+          </button>
+        </Link>
       </div>
-      <Link to="/addinventoryitem">
-        <button className="btn btn-primary w-25 mx-auto d-block my-3">
-          Add New Product
-        </button>
-      </Link>
-    </div>
+    </>
   );
 };
 

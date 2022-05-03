@@ -54,6 +54,14 @@ const MyItems = () => {
     <div className="container-width container mx-auto">
       <PageTitle title="My Items" />
       <h2 className="text-center">My Items</h2>
+      <hr
+        class="mb-4 mt-0 d-block mx-auto text-center"
+        style={{
+          width: "60px",
+          backgroundColor: "#00dafc",
+          height: "2px",
+        }}
+      />
 
       <table className="table table-striped table-hover caption-top table-responsive">
         <caption className="text-center">
