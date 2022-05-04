@@ -9,7 +9,7 @@ const ResetPassword = () => {
   const emailRef = useRef("");
   const [sendPasswordResetEmail, sending, error] =
     useSendPasswordResetEmail(auth);
-  let errorElement;
+  let errorMessage;
 
   const handleResetPassword = async () => {
     const email = emailRef.current.value;
@@ -26,7 +26,7 @@ const ResetPassword = () => {
   }
 
   if (error) {
-    errorElement = (
+    errorMessage = (
       <p className="text-danger text-center">Error: {error?.message}</p>
     );
   }
@@ -73,7 +73,7 @@ const ResetPassword = () => {
                 Submit
               </button>
             </form>
-            {errorElement}
+            {errorMessage}
           </div>
         </div>
       </div>

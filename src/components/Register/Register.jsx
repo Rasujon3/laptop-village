@@ -21,14 +21,14 @@ const Register = () => {
   const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
-  let errorElement;
+  let errorMessage;
 
   if (loading || updating) {
     return <Loading />;
   }
 
   if (error || updateError) {
-    errorElement = (
+    errorMessage = (
       <p className="text-danger text-center">
         {/* Error: {error?.message} {githubError?.message} */}
         Error: {error?.message}
@@ -108,10 +108,7 @@ const Register = () => {
                 name="terms"
                 id="terms"
               />
-              {/* <label
-          className={agree ? "ps-2 text-primary" : "ps-2 text-danger"}
-          htmlFor="terms"
-        > */}
+
               <label
                 className={`ps-2 grow ${agree ? "" : "text-danger"}`}
                 htmlFor="terms"
@@ -125,7 +122,7 @@ const Register = () => {
                 value="Register"
               />
             </form>
-            {errorElement}
+            {errorMessage}
             <p>
               <Link
                 className="text-primary pe-auto text-decoration-none"

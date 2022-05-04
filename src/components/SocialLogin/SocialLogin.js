@@ -24,7 +24,7 @@ const SocialLogin = () => {
 
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  let errorElement;
+  let errorMessage;
 
   useEffect(() => {
     // if (user || githubUser || facebookUser || twitterUser) {
@@ -54,7 +54,7 @@ const SocialLogin = () => {
   }
   // if (error || githubError || facebookError || twitterError) {
   if (error) {
-    errorElement = (
+    errorMessage = (
       <p className="text-danger text-center">
         {/* Error: {error?.message} {githubError?.message} */}
         Error: {error?.message}
@@ -76,7 +76,7 @@ const SocialLogin = () => {
         ></div>
       </div>
       <div>
-        {errorElement}
+        {errorMessage}
         <button
           onClick={() => signInWithGoogle()}
           className="btn border border-primary d-block mx-auto my-2 container-width grow"

@@ -11,7 +11,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  let errorElement;
+  let errorMessage;
 
   let from = location.state?.from?.pathname || "/home";
 
@@ -28,7 +28,7 @@ const Login = () => {
   }
 
   if (error) {
-    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+    errorMessage = <p className="text-danger">Error: {error?.message}</p>;
     toast(error?.message);
     return;
   }
@@ -97,7 +97,7 @@ const Login = () => {
                 Login
               </button>
             </form>
-            <span className="text-center">{errorElement}</span>
+            <span className="text-center">{errorMessage}</span>
             <p>
               <Link
                 className="text-primary pe-auto text-decoration-none grow"
