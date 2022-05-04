@@ -12,3 +12,9 @@
   font-size: 16px;
   margin-bottom: 15px;
 }
+.grow:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.02);
+  transition: 1s ease;
+}

@@ -31,7 +31,7 @@ const AddInventoryItem = () => {
       });
   };
   return (
-    <div className="addInventory container mx-auto">
+    <div data-aos="zoom-in-up" className="addInventory container mx-auto">
       <PageTitle title="Add Inventory" />
       <h2 className="text-center">Add a Product</h2>
       <hr

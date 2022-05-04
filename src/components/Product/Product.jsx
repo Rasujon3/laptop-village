@@ -9,7 +9,10 @@ const Product = ({ product, handleDeleteProduct }) => {
 
   return (
     <>
-      <div className="g-2 col-sm-12 col-md-6 col-lg-4">
+      <div
+        data-aos="flip-left"
+        className="g-2 col-sm-12 col-md-6 col-lg-4 grow"
+      >
         <div className="card">
           <img
             src={img}

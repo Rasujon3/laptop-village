@@ -49,14 +49,14 @@ const Login = () => {
   return (
     <div className="container">
       <div className="d-flex align-items-center my-2 row">
-        <div className="col-md-6 col-12">
+        <div data-aos="fade-right" className="col-md-6 col-12">
           <img
             className="w-100"
             src="https://i.ibb.co/DMj3XVd/login.jpg"
             alt="Login"
           />
         </div>
-        <div className="col-md-6 col-12 ">
+        <div data-aos="fade-left" className="col-md-6 col-12 ">
           <div className="">
             <PageTitle title="Login" />
             <h2 className="text-center mt-2">Login</h2>

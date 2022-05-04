@@ -51,7 +51,12 @@ const MyItems = () => {
     }
   };
   return (
-    <div className="container-width container mx-auto">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="2000"
+      className="container-width container mx-auto"
+    >
       <PageTitle title="My Items" />
       <h2 className="text-center">My Items</h2>
       <hr

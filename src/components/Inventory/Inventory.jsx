@@ -80,37 +80,14 @@ const Inventory = () => {
 
   return (
     <>
-      <div className="inventory container mx-auto my-5">
+      <div
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="3000"
+        className="inventory container mx-auto my-5"
+      >
         <PageTitle title="Inventory" />
-        {/* <div className="card">
-          <img src={img} className="card-img-top" alt={name} />
-          <div className="card-body">
-            <h5 className="card-title">{name}</h5>
-            <p className="card-text">{description}</p>
-            <p>Supplier Name: {supplierName}</p>
-            <h4>Price: $ {price}</h4>
-            <p> */}
-        {/* <small>Quantity: {quantity}</small> */}
-        {/* <small>Quantity: {singleProductQuantity}</small>
-            </p>
-            <button
-              disabled={parseFloat(singleProductQuantity) === 0}
-              onClick={handleDeliveredBtn}
-              className="btn btn-primary"
-            >
-              Delivered
-            </button> */}
-        {/* Button trigger modal  */}
-        {/* <button
-              type="button"
-              className="btn btn-primary ms-2"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              Update Product
-            </button>
-          </div>
-        </div> */}
+
         <div className="card mb-3">
           <div className="row g-0">
             <div className="col-md-4">

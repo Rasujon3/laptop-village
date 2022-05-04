@@ -29,13 +29,13 @@ const Contact = () => {
         }}
       />
       <div className="contact">
-        <div className="contact-left">
+        <div data-aos="fade-right" className="contact-left">
           <img
             src="https://rasujon3.github.io/assignment-2/images/contact.png"
             alt=""
           />
         </div>
-        <div className="contact-right">
+        <div data-aos="fade-left" className="contact-right">
           <form onSubmit={handleSubmit}>
             <input
               type="text"

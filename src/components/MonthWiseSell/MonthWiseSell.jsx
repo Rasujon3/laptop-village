@@ -26,7 +26,7 @@ const MonthWiseSell = () => {
       {data.length === 0 ? (
         <Loading />
       ) : (
-        <div>
+        <div data-aos="zoom-in">
           <ResponsiveContainer width="90%" height={200}>
             <LineChart width={800} height={500} data={data}>
               <Line dataKey={"month"} />
