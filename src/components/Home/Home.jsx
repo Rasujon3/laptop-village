@@ -5,6 +5,8 @@ import PageTitle from "../PageTitle/PageTitle";
 import Contact from "../Contact/Contact";
 import About from "../About/About";
 import Facts from "../Facts/Facts";
+import MonthWiseSell from "../MonthWiseSell/MonthWiseSell";
+import Dashboard from "../Dashboard/Dashboard";
 
 const Home = () => {
   return (
@@ -14,6 +16,7 @@ const Home = () => {
       <Products />
       <About />
       <Facts />
+      <Dashboard />
       <Contact />
     </>
   );

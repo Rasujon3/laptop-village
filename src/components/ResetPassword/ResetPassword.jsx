@@ -17,7 +17,7 @@ const ResetPassword = () => {
       await sendPasswordResetEmail(email);
       await toast("Sent email, Please check your inbox");
     } else {
-      toast("Please enter your email address");
+      // toast("Please enter your email address");
     }
   };
 
