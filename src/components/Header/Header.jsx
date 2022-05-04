@@ -78,13 +78,13 @@ const Header = () => {
                       className="nav-link"
                       to="/login"
                     >
-                      Sign Out
+                      Logout
                     </Link>
                   </li>
                 ) : (
                   <li className="nav-item">
                     <CustomLink className="nav-link" to="/login">
-                      Sign In
+                      Login
                     </CustomLink>
                   </li>
                 )}
