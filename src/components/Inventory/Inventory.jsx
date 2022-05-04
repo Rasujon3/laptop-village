@@ -114,14 +114,14 @@ const Inventory = () => {
                 ) : (
                   <button
                     onClick={handleDeliveredBtn}
-                    className="btn btn-primary"
+                    className="btn btn-primary grow"
                   >
                     Delivered
                   </button>
                 )}
                 <button
                   type="button"
-                  className="btn btn-primary ms-2"
+                  className="btn btn-primary ms-2 grow"
                   data-bs-toggle="modal"
                   data-bs-target="#staticBackdrop"
                 >
@@ -171,7 +171,7 @@ const Inventory = () => {
 
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary grow"
                   data-bs-dismiss="modal"
                 >
                   Restoke
@@ -181,7 +181,7 @@ const Inventory = () => {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="btn btn-secondary grow"
                 data-bs-dismiss="modal"
               >
                 Close

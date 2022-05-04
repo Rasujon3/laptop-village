@@ -67,7 +67,7 @@ const ResetPassword = () => {
 
               <button
                 type="submit"
-                className="btn btn-primary w-50 mx-auto d-block mb-2"
+                className="btn btn-primary w-50 mx-auto d-block mb-2 grow"
                 onClick={handleResetPassword}
               >
                 Submit

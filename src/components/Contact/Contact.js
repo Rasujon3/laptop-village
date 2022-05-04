@@ -58,7 +58,7 @@ const Contact = () => {
               cols="30"
               rows="10"
             ></textarea>
-            <button className="btn btn-primary" type="submit">
+            <button className="btn btn-primary grow" type="submit">
               Send Message
             </button>
           </form>

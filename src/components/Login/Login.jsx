@@ -92,7 +92,7 @@ const Login = () => {
               </div>
               <button
                 type="submit"
-                className="btn btn-primary w-50 mx-auto d-block mb-2"
+                className="btn btn-primary w-50 mx-auto d-block mb-2 grow"
               >
                 Login
               </button>
@@ -100,7 +100,7 @@ const Login = () => {
             <span className="text-center">{errorElement}</span>
             <p>
               <Link
-                className="text-primary pe-auto text-decoration-none"
+                className="text-primary pe-auto text-decoration-none grow"
                 to="/register"
               >
                 New to Laptop Village?{" "}
@@ -108,7 +108,7 @@ const Login = () => {
             </p>
             <p>
               <Link
-                className="text-primary pe-auto text-decoration-none"
+                className="text-primary pe-auto text-decoration-none grow"
                 to="/resetpassword"
               >
                 Forget Password?{" "}

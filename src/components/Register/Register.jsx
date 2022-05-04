@@ -113,14 +113,14 @@ const Register = () => {
           htmlFor="terms"
         > */}
               <label
-                className={`ps-2 ${agree ? "" : "text-danger"}`}
+                className={`ps-2 grow ${agree ? "" : "text-danger"}`}
                 htmlFor="terms"
               >
                 Accept Laptop Village Terms & Conditions
               </label>
               <input
                 disabled={!agree}
-                className="w-50 mx-auto btn btn-primary mt-2"
+                className="w-50 mx-auto btn btn-primary mt-2 grow"
                 type="submit"
                 value="Register"
               />

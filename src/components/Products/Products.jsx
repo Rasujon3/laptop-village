@@ -50,7 +50,7 @@ const Products = () => {
               ))}
         </div>
         <Link to="/manageinventory">
-          <button className="btn btn-primary mx-auto d-block my-3">
+          <button className="btn btn-primary mx-auto d-block my-3 grow">
             Manage Inventories
           </button>
         </Link>

@@ -28,12 +28,12 @@ const Product = ({ product, handleDeleteProduct }) => {
             <p>
               <small>Quantity: {quantity}</small>
             </p>
-            <Link to={`/inventory/${_id}`} className="btn btn-primary">
+            <Link to={`/inventory/${_id}`} className="btn btn-primary grow">
               Update Stock
             </Link>
             <button
               onClick={() => handleDeleteProduct(_id)}
-              className="btn btn-danger ms-2"
+              className="btn btn-danger ms-2 grow"
             >
               Delete
             </button>
