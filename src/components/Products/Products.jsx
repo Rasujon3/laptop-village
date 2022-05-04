@@ -50,7 +50,10 @@ const Products = () => {
               ))}
         </div>
         <Link to="/manageinventory">
-          <button className="btn btn-primary mx-auto d-block my-3 grow">
+          <button
+            disabled={products.length === 0 ? true : false}
+            className="btn btn-primary mx-auto d-block my-3 grow"
+          >
             Manage Inventories
           </button>
         </Link>
