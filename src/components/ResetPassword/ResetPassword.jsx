@@ -31,17 +31,22 @@ const ResetPassword = () => {
     );
   }
   return (
-    <div className="container">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="container"
+    >
       <PageTitle title="Reset Password" />
       <div className="d-flex align-items-center my-2 row">
-        <div data-aos="fade-right" className="col-md-6 col-12">
+        <div className="col-md-6 col-12">
           <img
             className="w-100"
             src="https://i.ibb.co/nMvyTGQ/reset.jpg"
             alt="Reset Password"
           />
         </div>
-        <div data-aos="fade-left" className="col-md-6 col-12">
+        <div className="col-md-6 col-12">
           <div className="">
             <h2 className="text-center mt-2">Forget Password</h2>
             <hr

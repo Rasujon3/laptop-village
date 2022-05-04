@@ -65,16 +65,21 @@ const Register = () => {
     }
   };
   return (
-    <div className="container">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="container"
+    >
       <div className="d-flex align-items-center my-2 row">
-        <div data-aos="fade-right" className="col-md-6 col-12">
+        <div className="col-md-6 col-12">
           <img
             className="w-100"
             src="https://i.ibb.co/tLmMJXd/register.png"
             alt="Register"
           />
         </div>
-        <div data-aos="fade-left" className="col-md-6 col-12">
+        <div className="col-md-6 col-12">
           <div className="register-form">
             <PageTitle title="Register" />
             <h2 style={{ textAlign: "center" }}>Register Now</h2>
