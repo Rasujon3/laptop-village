@@ -92,11 +92,17 @@ const Register = () => {
               }}
             />
             <form onSubmit={handleRegister}>
-              <input type="text" name="name" placeholder="Your Name" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="form-control"
+              />
 
               <input
                 type="email"
                 name="email"
+                className="form-control"
                 placeholder="Your Email"
                 required
               />
@@ -104,6 +110,7 @@ const Register = () => {
               <input
                 type="password"
                 name="password"
+                className="form-control"
                 placeholder="Password"
                 required
               />
