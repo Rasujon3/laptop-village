@@ -44,12 +44,12 @@ const AddInventoryItem = () => {
       />
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
-          className="mb-2"
+          className="mb-2 form-control"
           placeholder="Product Name"
           {...register("name", { required: true })}
         />
         <input
-          className="mb-2"
+          className="mb-2 form-control"
           placeholder="Email"
           value={user?.email}
           readOnly
@@ -57,30 +57,30 @@ const AddInventoryItem = () => {
           {...register("email", { required: true })}
         />
         <input
-          className="mb-2"
+          className="mb-2 form-control"
           placeholder="Price"
           type="number"
           {...register("price", { required: true })}
         />
         <textarea
-          className="mb-2"
+          className="mb-2 form-control"
           placeholder="Description"
           {...register("description", { required: true })}
         />
         <input
-          className="mb-2"
+          className="mb-2 form-control"
           placeholder="Quantity"
           type="number"
           {...register("quantity", { required: true })}
         />
         <input
-          className="mb-2"
+          className="mb-2 form-control"
           placeholder="Image"
           type="text"
           {...register("img", { required: true })}
         />
         <input
-          className="mb-2"
+          className="mb-2 form-control"
           placeholder="Supplier Name"
           type="text"
           {...register("supplierName", { required: true })}
