@@ -2,10 +2,13 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import { toast } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Product = ({ product, handleDeleteProduct }) => {
   const { _id, name, price, description, img, quantity, supplierName } =
     product;
+  const [user] = useAuthState(auth);
 
   return (
     <>
@@ -33,7 +36,7 @@ const Product = ({ product, handleDeleteProduct }) => {
             </Link>
             <button
               onClick={() => handleDeleteProduct(_id)}
-              className="btn btn-danger ms-2 grow"
+              className={`btn btn-danger ms-2 grow ${user ? "" : "d-none"}`}
             >
               Delete
             </button>
