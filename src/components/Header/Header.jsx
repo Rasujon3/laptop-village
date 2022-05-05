@@ -31,7 +31,7 @@ const Header = () => {
                 <>
                   <li className="nav-item">
                     <CustomLink
-                      className="nav-link"
+                      className="nav-link grow"
                       aria-current="page"
                       to="/myitems"
                     >
@@ -40,14 +40,14 @@ const Header = () => {
                   </li>
                   <li className="nav-item">
                     <CustomLink
-                      className="nav-link"
+                      className="nav-link grow"
                       aria-current="page"
                       to="/manageinventory"
                     >
                       Manage Inventories
                     </CustomLink>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item grow">
                     <CustomLink
                       className="nav-link"
                       aria-current="page"
@@ -63,7 +63,7 @@ const Header = () => {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <CustomLink
-                    className="nav-link"
+                    className="nav-link grow"
                     aria-current="page"
                     to="/blogs"
                   >
@@ -75,14 +75,14 @@ const Header = () => {
                   <li className="nav-item">
                     <Link
                       onClick={() => signOut(auth)}
-                      className="nav-link"
+                      className="nav-link grow"
                       to="/login"
                     >
                       Logout
                     </Link>
                   </li>
                 ) : (
-                  <li className="nav-item">
+                  <li className="nav-item grow">
                     <CustomLink className="nav-link" to="/login">
                       Login
                     </CustomLink>
