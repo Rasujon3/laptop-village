@@ -1,11 +1,6 @@
 import React, { useEffect } from "react";
 import google from "../../images/social/google.png";
-import {
-  useSignInWithFacebook,
-  useSignInWithGithub,
-  useSignInWithGoogle,
-  useSignInWithTwitter,
-} from "react-firebase-hooks/auth";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
@@ -14,12 +9,6 @@ import axios from "axios";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  // const [signInWithGithub, githubUser, githubLoading, githubError] =
-  //   useSignInWithGithub(auth);
-  // const [signInWithFacebook, facebookUser, facebookLoading, facebookError] =
-  //   useSignInWithFacebook(auth);
-  // const [signInWithTwitter, twitterUser, twitterLoading, twitterError] =
-  //   useSignInWithTwitter(auth);
   const navigate = useNavigate();
 
   let location = useLocation();
@@ -27,11 +16,9 @@ const SocialLogin = () => {
   let errorMessage;
 
   useEffect(() => {
-    // if (user || githubUser || facebookUser || twitterUser) {
     const handleJWTtoken = async () => {
       if (user) {
         const email = user?.user?.email;
-        console.log(email);
         const { data } = await axios.post(
           "https://assignmenteleven.herokuapp.com/login",
           {
@@ -39,26 +26,19 @@ const SocialLogin = () => {
           }
         );
         localStorage.setItem("accessToken", data.accessToken);
-        // event.target.reset();
-        // navigate(from, { replace: true });
+
         navigate(from, { replace: true });
       }
     };
     handleJWTtoken();
-    // }, [user, githubUser, facebookUser, twitterUser]);
   }, [user]);
 
-  // if (loading || githubLoading || facebookLoading || twitterLoading) {
   if (loading) {
     return <Loading />;
   }
-  // if (error || githubError || facebookError || twitterError) {
   if (error) {
     errorMessage = (
-      <p className="text-danger text-center">
-        {/* Error: {error?.message} {githubError?.message} */}
-        Error: {error?.message}
-      </p>
+      <p className="text-danger text-center">Error: {error?.message}</p>
     );
   }
 
@@ -84,27 +64,6 @@ const SocialLogin = () => {
           <img style={{ width: "30px" }} src={google} alt="" />
           <span className="px-2">Google Sign In</span>
         </button>
-        {/* <button
-          onClick={() => signInWithFacebook()}
-          className="btn border border-primary container-width d-block mx-auto my-2 grow"
-        >
-          <img style={{ width: "30px" }} src={facebook} alt="" />
-          <span className="px-2">Facebok Sign In</span>
-        </button>
-        <button
-          onClick={() => signInWithGithub()}
-          className="btn border border-primary container-width d-block mx-auto my-2 grow"
-        >
-          <img style={{ width: "30px" }} src={github} alt="" />
-          <span className="px-2">Github Sign In</span>
-        </button>
-        <button
-          onClick={() => signInWithTwitter()}
-          className="btn border border-primary container-width d-block mx-auto grow"
-        >
-          <img style={{ width: "30px" }} src={twitter} alt="" />
-          <span className="px-2">Twitter Sign In</span>
-        </button> */}
       </div>
     </div>
   );

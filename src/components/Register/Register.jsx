@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
@@ -23,24 +23,30 @@ const Register = () => {
   let from = location.state?.from?.pathname || "/";
   let errorMessage;
 
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user]);
+
   if (loading || updating) {
     return <Loading />;
   }
 
   if (error || updateError) {
-    errorMessage = (
-      <p className="text-danger text-center">
-        {/* Error: {error?.message} {githubError?.message} */}
-        Error: {error?.message}
-      </p>
-    );
-    toast(error?.message);
-    return;
+    // setAgree(false);
+    errorMessage = <p className="text-danger text-center">{error?.message}</p>;
+    // toast(error?.message);
+    // return;
   }
 
-  if (user) {
-    // navigate(from, { replace: true });
-  }
+  const onHandleChecked = (e) => {
+    if (e.target.checked) {
+      setAgree(true);
+    } else {
+      setAgree(false);
+    }
+  };
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -61,7 +67,7 @@ const Register = () => {
       localStorage.setItem("accessToken", data.accessToken);
       event.target.reset();
       // navigate(from, { replace: true });
-      navigate(from, { replace: true });
+      // navigate(from, { replace: true });
     }
   };
   return (
@@ -115,7 +121,7 @@ const Register = () => {
                 required
               />
               <input
-                onClick={() => setAgree(!agree)}
+                onChange={onHandleChecked}
                 type="checkbox"
                 name="terms"
                 id="terms"
@@ -134,7 +140,7 @@ const Register = () => {
                 value="Register"
               />
             </form>
-            {errorMessage}
+            <span className="text-center">{errorMessage}</span>
             <p>
               <Link
                 className="text-primary pe-auto text-decoration-none"

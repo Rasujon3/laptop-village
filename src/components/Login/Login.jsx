@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "./../PageTitle/PageTitle";
 import Loading from "./../Loading/Loading";
@@ -18,19 +18,21 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  useEffect(() => {
+    if (user) {
+      toast("Login Successfully");
+      navigate(from, { replace: true });
+    }
+  }, [user]);
+
   if (loading) {
     return <Loading />;
   }
 
-  if (user) {
-    // navigate(from, { replace: true });
-    toast("Login Successfully");
-  }
-
   if (error) {
     errorMessage = <p className="text-danger">Error: {error?.message}</p>;
-    toast(error?.message);
-    return;
+    // toast(error?.message);
+    // return;
   }
 
   const handleSubmit = async (event) => {
@@ -44,7 +46,7 @@ const Login = () => {
     );
     localStorage.setItem("accessToken", data.accessToken);
     event.target.reset();
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   };
   return (
     <div
