@@ -49,11 +49,12 @@ const Inventory = () => {
   const handleIncreaseProduct = (event) => {
     event.preventDefault();
     const inputQuantity = event.target.quantity.value;
+
     const quantity = parseFloat(inputQuantity);
     // const previousQuantity = parseFloat(product.quantity);
     const previousQuantity = parseFloat(singleProductQuantity);
-    if (quantity < 0) {
-      toast("Please Enter a Positive Number");
+    if (quantity < 0 || quantity !== parseInt(quantity)) {
+      toast("Please Enter a Positive Integer Number");
       return;
     }
 
@@ -159,7 +160,7 @@ const Inventory = () => {
               <form onSubmit={handleIncreaseProduct}>
                 <div className="mb-3">
                   <input
-                    type="number"
+                    // type="number"
                     placeholder="Quantity"
                     name="quantity"
                     required
