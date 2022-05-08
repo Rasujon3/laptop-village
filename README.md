@@ -5,6 +5,9 @@
 [https://assignment-11-9c7c9.web.app/](https://assignment-11-9c7c9.web.app/)
 
 ---
+# Short Description
+This website is mainly a laptop warehouse website. You can see some products in home page. You can manage the quantity of products. You can increase & decrease products quantity and also can delete products. You can add products and also can see products which you add in my items page. Full authentication system based on firebase & hosting this project in firebase. Using MongoDb database & Node JS use for backend for this project.
+---
 
 ## Project features and functionality
 
