@@ -8,6 +8,9 @@
 # Short Description
 This website is mainly a laptop warehouse website. You can see some products in home page. You can manage the quantity of products. You can increase & decrease products quantity and also can delete products. You can add products and also can see products which you add in my items page. Full authentication system based on firebase & hosting this project in firebase. Using MongoDb database & Node JS use for backend for this project.
 ---
+#### Project Screenshots
+<img width="250" alt="iMAGE1" src="https://i.ibb.co/MGTPWMQ/laptop-village.png">|<img width="250" alt="IMAGE2" src="https://i.ibb.co/PjKgwsK/laptop-Village2.png">|<img width="250" alt="IMAGE3" src="https://i.ibb.co/wWbkyBy/laptop-Village3.png">
+---
 
 ## Project features and functionality
 
